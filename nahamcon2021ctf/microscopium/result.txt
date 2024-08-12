@@ -1,0 +1,4 @@
+┌──(kali㉿kali)-[~/…/microscopium/microscopium/assets/output]
+└─$ node modified-script.js
+Pin: 4784
+Flag: flag{06754e57e02b0c505149cd1055ba5e0b}
