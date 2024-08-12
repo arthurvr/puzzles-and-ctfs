@@ -1,0 +1,64 @@
+<template>
+  <section>
+    <div class="container">
+      <h1 class="title">Exif Utils</h1>
+      <section>
+        <form @submit.prevent="submitUrl" name="submitUrl">
+          <b-field grouped label="Enter a URL to an image">
+            <b-input
+              placeholder="http://..."
+              expanded
+              v-model="url"
+            ></b-input>
+            <b-button native-type="submit" type="is-dark">
+              Submit
+            </b-button>
+          </b-field>
+        </form>
+      </section>
+      <section v-if="hasResponse">
+        <pre>
+          {{ response }}
+        </pre>
+      </section>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  name: 'Exif Util',
+  auth: false,
+  data() {
+    return {
+      hasResponse: false,
+      response: '',
+      url: '',
+    }
+  },
+  methods: {
+    async submitUrl() {
+      this.hasResponse = false
+      console.log('Submitted URL')
+      try {
+        const response = await this.$axios.$get('http://api-dev-backup:8080/exif', {
+          params: {
+            url: this.url,
+          },
+        })
+        this.hasResponse = true
+        this.response = response
+      } catch (err) {
+        console.log(err)
+        this.$buefy.notification.open({
+          duration: 4000,
+          message: 'Something bad happened, please verify that the URL is valid',
+          type: 'is-danger',
+          position: 'is-top',
+          hasIcon: true,
+        })
+      }
+    },
+  },
+}
+</script>
