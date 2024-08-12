@@ -1,0 +1,30 @@
+given_cubes = [
+    0x13693,
+    0x6b2c0,
+    0x11a9f9,
+    0x157000,
+    0x1cb91,
+    0x1bb528,
+    0x1bb528,
+    0xded21,
+    0x144f38,
+    0xfb89d,
+    0x169b48,
+    0xd151f,
+    0x8b98b,
+    0x17d140,
+    0xded21,
+    0x1338c0,
+    0x1338c0,
+    0x11a9f9,
+    0x1b000,
+    0x144f38,
+    0x1734eb
+]
+
+result = ""
+for cube in given_cubes:
+    x = int(round (cube ** (1.0 / 3.0)))
+    result += chr(x)
+print(result)
+
