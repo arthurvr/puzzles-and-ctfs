@@ -1,0 +1,1 @@
+arthurCTF{dummy_flag}
