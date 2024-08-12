@@ -6,4 +6,4 @@ This are my solutions to all kinds of (online) coding challenges, puzzles and lo
 
 This repo is just a way to keep track of my own work... pull requests with changes or more solutions aren't welcome, sorry :) Feedback, thoughts or fresh ideas, however, are welcome!
 
-
+I try to store all malware samples in password-protected zip files. Your anti-virus might still complain though. (And, anything is at your own risk 😉)
